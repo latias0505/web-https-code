@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam07 Page</title>
+    <style>
+      body {
+        background-color: #f5f6f7; /* 변경할 배경 색상 */
+        margin-left: 38%;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="naver.png"
+      width="240px"
+      height="43px"
+      style="margin-left: 109px; margin-top: 52px; margin-bottom: 11px"
+    />
+    <br /><br />
+    <style>
+      b {
+        font-size: 15px; /* 폰트 크기 조절 */
+      }
+    </style>
+
+    <b>아이디</b><br />
+
+    <style>
+      .input-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+
+      input[type="text"] {
+        padding-right: 100px; /* 오른쪽 패딩값으로 @naver.com 공간 확보 */
+        box-sizing: border-box;
+      }
+
+      .input-wrapper::after {
+        content: "@naver.com";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        font-weight: bold;
+        opacity: 0.5;
+        font-size: 14px;
+        margin-right: 5px;
+        margin-top: -5px;
+      }
+    </style>
+    <div class="input-wrapper">
+      <input
+        type="text"
+        style="
+          width: 460px;
+          height: 49px;
+          margin-top: 8px;
+          margin-bottom: 17px;
+          border: 1px solid rgb(218, 218, 218);
+        "
+      />
+    </div>
+    <br /><br />
+    <b>비밀번호</b><br />
+    <input
+      type="password"
+      style="
+        width: 450px;
+        height: 44px;
+        margin-top: 6px;
+        margin-bottom: 17px;
+        border: 1px solid rgb(218, 218, 218);
+      "
+    />
+    <br /><br />
+    <b>비밀번호 재확인</b><br />
+    <input
+      type="password"
+      style="
+        width: 452px;
+        height: 43px;
+        margin-top: 7px;
+        margin-bottom: 37px;
+        border: 1px solid rgb(218, 218, 218);
+      "
+    />
+    <br /><br />
+    <b style="margin-left: -2">이름</b><br />
+    <input
+      type="text"
+      style="
+        width: 459px;
+        height: 50px;
+        margin-top: 7px;
+        margin-bottom: 16px;
+        border: 1px solid rgb(218, 218, 218);
+      "
+    />
+    <br /><br />
+    <b style="margin-left: -1px; font-size: 15px">생년월일</b><br />
+    <input
+      type="number"
+      placeholder="년(4자)"
+      style="
+        width: 138px;
+        height: 44px;
+        margin-top: 6px;
+        border: 1px solid rgb(218, 218, 218);
+      "
+    />
+    <select
+      name=""
+      id=""
+      style="
+        width: 147px;
+        height: 50px;
+        margin-left: 3px;
+        border: 1px solid rgb(218, 218, 218);
+      "
+    >
+      <option value="month">월</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+    <input
+      type="number"
+      placeholder="일"
+      style="
+        width: 139px;
+        height: 44px;
+        margin-left: 5px;
+        margin-bottom: 17px;
+        border: 1px solid rgb(218, 218, 218);
+      "
+    />
+    <br /><br />
+    <b style="margin-left: -1px; font-size: 16px">성별</b><br />
+    <select
+      name=""
+      id=""
+      style="
+        width: 459px;
+        height: 51px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        border: 1px solid rgb(218, 218, 218);
+      "
+    >
+      <option value="who">성별</option>
+      <option value="mail">남</option>
+      <option value="femail">여</option>
+      <option value="none">선택 안함</option>
+    </select>
+    <br /><br />
+    <b>본인 확인 이메일</b>(선택)<br />
+    <input
+      type="text"
+      placeholder="선택입력"
+      style="
+        width: 460px;
+        height: 49px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        border: 1px solid rgb(218, 218, 218);
+      "
+    />
+    <br /><br />
+    <b>휴대전화</b><br />
+    <select
+      name=""
+      id=""
+      style="
+        width: 460px;
+        height: 51px;
+        margin-top: 6px;
+        border: 1px solid rgb(218, 218, 218);
+      "
+    >
+      <option value="korea">대한민국 +82</option>
+      <option value="korea">미국/캐나다 +1</option>
+      <option value="korea">일본 +81</option>
+      <option value="korea">남아프리카공화국 +27</option>
+      <option value="korea">스위스 +41</option>
+    </select>
+    <br />
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      placeholder="전화번호 입력"
+      style="
+        width: 327px;
+        height: 45px;
+        margin-top: 10px;
+        border: 1px solid rgb(218, 218, 218);
+      "
+    />
+    <input
+      type="submit"
+      value="인증번호 받기"
+      style="
+        width: 117px;
+        height: 48px;
+        background-color: rgb(3, 199, 90);
+        border: none;
+        margin-left: 4px;
+        font-size: 16px;
+        color: white;
+      "
+    />
+    <br />
+    <input
+      type="number"
+      placeholder="인증번호를 입력하세요"
+      style="
+        width: 452px;
+        height: 45px;
+        margin-top: 10px;
+        margin-bottom: 11px;
+        border: 2px solid rgb(218, 218, 218);
+      "
+      disabled
+    />
+    <br /><br />
+    <input
+      type="submit"
+      value="가입하기"
+      style="
+        width: 460px;
+        height: 53px;
+        background-color: rgb(3, 199, 90);
+        border: none;
+        font-size: 20px;
+        color: white;
+      "
+    />
+  </body>
+</html>
