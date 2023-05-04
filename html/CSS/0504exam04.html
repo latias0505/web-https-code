@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainbow Attack</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-size: 25px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        border: 3px solid white;
+        text-transform: uppercase;
+        color: white;
+      }
+
+      #title {
+        border: 8px dashed black;
+        width: 982px;
+        height: 70px;
+        text-align: center;
+        color: aqua;
+        font-size: 50px;
+        text-shadow: -3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000;
+      }
+
+      a {
+        text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+      }
+
+      .cube1 {
+        background-color: rgb(255, 0, 0);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube2 {
+        background-color: orange;
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube3 {
+        background-color: yellow;
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube4 {
+        background-color: green;
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube5 {
+        background-color: blue;
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube6 {
+        background-color: darkblue;
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube7 {
+        background-color: purple;
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube8 {
+        background-color: rgba(255, 0, 0, 0.8);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube9 {
+        background-color: rgba(255, 166, 0, 0.8);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube10 {
+        background-color: rgba(255, 255, 0, 0.8);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube11 {
+        background-color: rgba(0, 128, 0, 0.8);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube12 {
+        background-color: rgba(0, 0, 255, 0.8);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube13 {
+        background-color: rgba(0, 0, 139, 0.8);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube14 {
+        background-color: rgba(128, 0, 128, 0.8);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube15 {
+        background-color: rgba(255, 0, 0, 0.7);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube16 {
+        background-color: rgba(255, 166, 0, 0.7);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube17 {
+        background-color: rgba(255, 255, 0, 0.7);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube18 {
+        background-color: rgba(0, 128, 0, 0.7);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube19 {
+        background-color: rgba(0, 0, 255, 0.7);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube20 {
+        background-color: rgba(0, 0, 139, 0.7);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube21 {
+        background-color: rgba(128, 0, 128, 0.7);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube22 {
+        background-color: rgba(255, 0, 0, 0.6);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube23 {
+        background-color: rgba(255, 166, 0, 0.6);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube24 {
+        background-color: rgba(255, 255, 0, 0.6);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube25 {
+        background-color: rgba(0, 128, 0, 0.6);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube26 {
+        background-color: rgba(0, 0, 255, 0.6);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube27 {
+        background-color: rgba(0, 0, 139, 0.6);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube28 {
+        background-color: rgba(128, 0, 128, 0.6);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube29 {
+        background-color: rgba(255, 0, 0, 0.5);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube30 {
+        background-color: rgba(255, 166, 0, 0.5);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube31 {
+        background-color: rgba(255, 255, 0, 0.5);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube32 {
+        background-color: rgba(0, 128, 0, 0.5);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube33 {
+        background-color: rgba(0, 0, 255, 0.5);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube34 {
+        background-color: rgba(0, 0, 139, 0.5);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube35 {
+        background-color: rgba(128, 0, 128, 0.5);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube36 {
+        background-color: rgba(255, 0, 0, 0.4);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube37 {
+        background-color: rgba(255, 166, 0, 0.4);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube38 {
+        background-color: rgba(255, 255, 0, 0.4);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube39 {
+        background-color: rgba(0, 128, 0, 0.4);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube40 {
+        background-color: rgba(0, 0, 255, 0.4);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube41 {
+        background-color: rgba(0, 0, 139, 0.4);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube42 {
+        background-color: rgba(128, 0, 128, 0.4);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: underline;
+        text-transform: lowercase;
+      }
+      .cube43 {
+        background-color: rgba(255, 0, 0, 0.3);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube44 {
+        background-color: rgba(255, 166, 0, 0.3);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube45 {
+        background-color: rgba(255, 255, 0, 0.3);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube46 {
+        background-color: rgba(0, 128, 0, 0.3);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube47 {
+        background-color: rgba(0, 0, 255, 0.3);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube48 {
+        background-color: rgba(0, 0, 139, 0.3);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+      .cube49 {
+        background-color: rgba(128, 0, 128, 0.3);
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        text-decoration-line: overline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">무지개색 총 공격이다!!!</h1>
+    <table width="1000px" height="1000px">
+      <tr>
+        <td class="cube1"><a>red</a></td>
+        <td class="cube2"><a>orange</a></td>
+        <td class="cube3"><a>yellow</a></td>
+        <td class="cube4"><a>green</a></td>
+        <td class="cube5"><a>blue</a></td>
+        <td class="cube6"><a>darkblue</a></td>
+        <td class="cube7"><a>purple</a></td>
+      </tr>
+      <tr>
+        <td class="cube8"><a>red</a></td>
+        <td class="cube9"><a>orange</a></td>
+        <td class="cube10"><a>yellow</a></td>
+        <td class="cube11"><a>green</a></td>
+        <td class="cube12"><a>blue</a></td>
+        <td class="cube13"><a>darkblue</a></td>
+        <td class="cube14"><a>purple</a></td>
+      </tr>
+      <tr>
+        <td class="cube15"><a>red</a></td>
+        <td class="cube16"><a>orange</a></td>
+        <td class="cube17"><a>yellow</a></td>
+        <td class="cube18"><a>green</a></td>
+        <td class="cube19"><a>blue</a></td>
+        <td class="cube20"><a>darkblue</a></td>
+        <td class="cube21"><a>purple</a></td>
+      </tr>
+      <tr>
+        <td class="cube22"><a>red</a></td>
+        <td class="cube23"><a>orange</a></td>
+        <td class="cube24"><a>yellow</a></td>
+        <td class="cube25"><a>green</a></td>
+        <td class="cube26"><a>blue</a></td>
+        <td class="cube27"><a>darkblue</a></td>
+        <td class="cube28"><a>purple</a></td>
+      </tr>
+      <tr>
+        <td class="cube29"><a>red</a></td>
+        <td class="cube30"><a>orange</a></td>
+        <td class="cube31"><a>yellow</a></td>
+        <td class="cube32"><a>green</a></td>
+        <td class="cube33"><a>blue</a></td>
+        <td class="cube34"><a>darkblue</a></td>
+        <td class="cube35"><a>purple</a></td>
+      </tr>
+      <tr>
+        <td class="cube36"><a>red</a></td>
+        <td class="cube37"><a>orange</a></td>
+        <td class="cube38"><a>yellow</a></td>
+        <td class="cube39"><a>green</a></td>
+        <td class="cube40"><a>blue</a></td>
+        <td class="cube41"><a>darkblue</a></td>
+        <td class="cube42"><a>purple</a></td>
+      </tr>
+      <tr>
+        <td class="cube43"><a>red</a></td>
+        <td class="cube44"><a>orange</a></td>
+        <td class="cube45"><a>yellow</a></td>
+        <td class="cube46"><a>green</a></td>
+        <td class="cube47"><a>blue</a></td>
+        <td class="cube48"><a>darkblue</a></td>
+        <td class="cube49"><a>purple</a></td>
+      </tr>
+    </table>
+  </body>
+</html>
