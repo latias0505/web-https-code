@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Page</title>
+    <style>
+        @font-face {
+            font-family: font1;
+            src: url(Typo_SsangmunDongB.ttf);
+        }
+      .video1 {
+        width: 100%;
+        height: 100%;
+      }
+      .parent {
+        position: absolute;
+      }
+      #pic {
+        width: 40%;
+        z-index: 1;
+        position: absolute;
+        top: 200px;
+        transform: translateX(75%);
+      }
+      #div1 {
+        font-size: 50px;
+        z-index: 1;
+        position: absolute;
+        top: 90px;
+        transform: translateX(-50%);
+        left: 50.7%;
+        color: white;
+        text-shadow: -3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000;
+        font-family: font1;
+      }
+      #div2 {
+        z-index: 1;
+        border: 1px black solid;
+        background-color: black;
+        width: 180px;
+        height: 70px;
+        border-radius: 10px;
+        color: white;
+        position: fixed;
+        top: 5px;
+        right: 36px;
+        font-size: 28px;
+        text-align: center;
+        
+      }
+      #div3 {
+        z-index: 1;
+        border: 1px black solid;
+        background-color: black;
+        width: 180px;
+        height: 70px;
+        border-radius: 10px;
+        color: white;
+        position: fixed;
+        top: 5px;
+        right: 230px;
+        font-size: 28px;
+        text-align: center;
+        
+      }
+      #goo {
+        margin-top: 10px;
+      }
+      #app {
+        margin-top: 10px;
+      }
+      #div4 {
+        margin-top: -5px;
+        width: 100%;
+        height: 100%;
+      }
+      #div5 {
+        width: 100%;
+        height: 120vh;
+        text-align: center;
+        font-size: 80px;
+        font-family: font1;
+        background-color:rgba(245, 245, 220, 0.175);
+      }
+      #div6 {
+        width: 100%;
+        height: 90vh;
+        text-align: center;
+        font-size: 80px;
+        font-family: font1;
+        background-color:rgba(245, 245, 220, 0.175);
+      }
+      #p1 {
+        margin-top: 100px;
+        font-size: 30px;
+        margin-bottom: -10px;
+        font-family: font1;
+      }
+      #p2 {
+        font-size: 25px;
+        color: gray;
+        font-family: font1;
+      }
+      .video2 {
+        float: left;
+        margin-left: 50px;
+        margin-top: 60px;
+      }
+      #p3 {
+        float: right;
+        font-size: 45px;
+        width: 45%;
+        margin-right: 1%;
+        margin-top: 4%;
+
+      }
+      #p4 {
+        float: right;
+        font-size: 45px;
+        width: 45%;
+        margin-right: 1%;
+        margin-top: 4%;
+
+      }
+      #div7 {
+        width: 100%;
+        height: 20vh;
+        font-size: 30px;
+        font-family: font1;
+        background-color:black;
+        color: white;
+        display: flex;
+        align-items: center;
+        border: 1px solid black;
+      }
+      #img2 {
+        clear: right;
+        position: absolute;
+        left: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <video class="video1" autoplay="autoplay" muted="muted" loop>
+        <source src="gardiantales.mp4" type="video/mp4" />
+      </video>
+      <div><img id="pic" src="img_tales.png" alt="" /></div>
+      <div id="div1">
+        <strong>세상 모든 재미를 다 담았다</strong>
+      </div>
+      <p id="div2"><img id="goo" src="google.PNG" alt=""></p>
+      <p id="div3"><img id="app" src="apple.PNG" alt=""></p>
+    </div>
+    <div id="div4"><img src="img1.png" alt="" width="100%" height="100%"></div>
+    <div id="div5"><p id="p1"><strong>세상 모든 재미를 다 담았다</p>띵작 어드벤처</strong><p id="p2">명작 어드벤처 RPG의 탄생! 가디언 테일즈에서 최고의 모험을 경험하세요!<br>거대한 던전에서 다양한 난이도의 퍼즐을 풀고, 적과의 전투에서 승리하세요!<br>가디언테일즈만의 엄청난 스토리가 이제 시작됩니다!</p>
+        <p id="p3">단순한 게임에 지친 여러분을 위한<br>다양한 종류와 난이도의 퍼즐!<br><br><br>도트 감성과 탈출 게임에서나 보던<br>퍼즐기믹의 놀라운 등장!!<br><br><br>과연 전부 풀 수 있을 것인가?</p>
+        <video class="video2" autoplay="autoplay" muted="muted" loop width="50%">
+            <source src="puzzle.mp4" type="video/mp4" />
+          </video>
+    </div>
+    <div id="div6">
+        <br><p id="p4">드디어 등장하는 강력한 보스!<br><br><br>쉴 틈 없이 움직이게 만드는<br>화려하지만 강력한 패턴의 공격!!<br><br><br>패턴을 피해서 보스를 처치해주세요</p>
+        <video class="video2" autoplay="autoplay" muted="muted" loop width="50%">
+            <source src="video1.mp4" type="video/mp4" />
+          </video>
+    </div>
+    <div id="div6">
+        <br><p id="p4">한번 찍먹하면 더 먹을 수 밖에 없다!<br><br><br>가디언테일즈만의 화려한 스토리<br>이 위대한 여정에 참여해주세요<br><br><br>유명 노래 스트리머 Raon이 함께한<br>가디언 테일즈의 OST는 서비스!</p>
+        <video class="video2" autoplay="autoplay" muted="muted" loop width="50%">
+            <source src="video2.mp4" type="video/mp4" />
+          </video>
+    </div>
+    <div id="div7"><p> feat.이거 쉽덕겜 아니야!!</p><img id="img2" src="img3.PNG" alt=""></div>
+  </body>
+</html>
