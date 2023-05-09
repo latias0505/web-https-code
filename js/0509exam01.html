@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0509exam01</title>
+</head>
+<body>
+
+    <script>
+        var text = prompt('이름을 입력해주세요');
+        
+        //이름의 값이 null 이거나 공백이 있다면 앞 뒤 공백을 지우고 검사하여 공백인지 아닌지 검사
+        while (text === null || text.trim() == '') {
+
+            text = prompt('이름을 다시 입력해주세요');
+        }
+
+        alert(text + '님 안녕하세요');
+    </script>
+</body>
+</html>
