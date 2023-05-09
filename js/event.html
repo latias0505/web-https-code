@@ -13,18 +13,25 @@
         }
     </style>
     <script>
-        function changeBlueColor() {
+        function changeColor(color) {
             let box = document.getElementById('box');
-            box.style.backgroundColor = '#0000ff'
+            box.style.backgroundColor = color;
         }
 
-        function changeYellowColor() {
-            let box = document.getElementById('box');
-            box.style.backgroundColor = '#ffff00'
+        function showAlert() {
+            alert('Hello World');
+        }
+
+        function showAlert(element) {
+            console.log(element.textContent);
+            alert(element.textContent);
         }
     </script>
 </head>
 <body>
-    <div id="box" onmouseover="changeBlueColor()" onmouseleave="changeYellowColor()"></div>
+    <div id="box" onmouseover="changeColor('#0000ff')" onmouseleave="changeColor('#ffff00')"></div>
+
+    <div class="big" onclick="showAlert(this)">Hello World</div>
+    <div onclick="showAlert(this)">안녕하세요</div>
 </body>
 </html>
