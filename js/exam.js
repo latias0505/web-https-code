@@ -6,7 +6,7 @@ function asknum() {
 
 function checknum(num) {
   if (isNaN(num)) {
-    alert("숫자만 입력해주세요");
+    alert("숫자만 입력해주세요.");
     asknum();
   } else if (num > 100 || num < 1) {
     alert("1에서 100사이의 숫자만 입력해주세요");
