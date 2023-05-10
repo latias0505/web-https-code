@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0510exam04</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        let box = null;
+        $("#box1").click(function () {
+          $(this).css({
+            "background-color": "#ffffff",
+            color: "#000000",
+            "border-color": "#000000",
+          });
+          $("#box2, #box3").css({
+            "background-color": "",
+            color: "",
+            "border-color": "",
+          });
+        });
+        $("#box2").click(function () {
+          $(this).css({
+            "background-color": "#ffffff",
+            color: "#000000",
+            "border-color": "#000000",
+          });
+          $("#box1, #box3").css({
+            "background-color": "",
+            color: "",
+            "border-color": "",
+          });
+        });
+        $("#box3").click(function () {
+          $(this).css({
+            "background-color": "#ffffff",
+            color: "#000000",
+            "border-color": "#000000",
+          });
+          $("#box1, #box2").css({
+            "background-color": "",
+            color: "",
+            "border-color": "",
+          });
+        });
+      });
+    </script>
+    <style>
+      #box1,
+      #box2,
+      #box3 {
+        border: 1px gray solid;
+        width: 150px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        background-color: gray;
+        color: white;
+      }
+      #box2,
+      #box3 {
+        margin-left: 20px;
+      }
+      .container {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="box1">html</div>
+      <div id="box2">css</div>
+      <div id="box3">javascript</div>
+    </div>
+  </body>
+</html>

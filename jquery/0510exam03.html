@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#button").click(function () {
+          let text;
+          let title;
+          while (true) {
+            title = prompt("이름을 입력해주세요");
+            if (title === null || title.trim() == "") {
+              alert("정확한 이름을 기재해주세요");
+            } else {
+              break;
+            }
+          }
+          while (true) {
+            text = prompt("등록할 기사를 입력해주세요");
+            if (text === null || text.trim() == "") {
+              alert("정확한 기사를 기재해주세요");
+            } else {
+              break;
+            }
+          }
+
+          const newsDiv = $("<div>").attr("id", "news").appendTo("#main");
+          const newsContent = $("<b>").text(title).appendTo(newsDiv);
+          $("<span>").text(text).appendTo(newsDiv);
+        });
+      });
+    </script>
+    <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #header {
+        width: 490px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        background-color: gray;
+        padding-left: 10px;
+      }
+      #main {
+        width: 500px;
+        height: 110%;
+        background-color: rgba(128, 128, 128, 0.175);
+      }
+      #button {
+        margin-top: 20px;
+        background-color: gray;
+        width: 140px;
+        height: 40px;
+      }
+      #news {
+        border: 1px black solid;
+        margin: 20px 20px 20px 20px;
+        height: 50px;
+        font-size: 30px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">기사 등록하기</div>
+      <div id="main">
+        <div id="news"><b>박지성</b>SBS에서 월드컵 보세요!</div>
+        <div id="news"><b>안정환</b>MBC죠...</div>
+        <div id="news"><b>이영표</b>KBS는 수신료의 가치를..</div>
+      </div>
+      <input type="button" value="등록하기" id="button" />
+    </div>
+  </body>
+</html>
