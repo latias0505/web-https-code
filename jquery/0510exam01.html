@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0510exam01</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        let text;
+        while (true) {
+          text = prompt("텍스트 값을 입력해주세요");
+          if (text === null || text.trim() == "") {
+            alert("올바른 텍스트 값을 입력해주세요");
+          } else {
+            break;
+          }
+        }
+        $("#text").html(text);
+
+        $("#button1").click(function () {
+          $("#text").css("color", "#ff0000");
+        });
+        $("#button2").click(function () {
+          $("#text").css("color", "#0000ff");
+        });
+        $("#button3").click(function () {
+          $("#text").css("color", "#008000");
+        });
+
+        $("#button1, #button2, #button3").show();
+      });
+    </script>
+    <style>
+      #text {
+        font-size: 100px;
+        text-align: center;
+      }
+      #button1,
+      #button2,
+      #button3 {
+        display: none;
+      }
+      .button-container {
+        text-align: center;
+      }
+      .button-container input {
+        display: inline-block;
+        width: 100px;
+        height: 50px;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="text"></div>
+    <div class="button-container">
+      <input type="button" id="button1" value="빨강" />
+      <input type="button" id="button2" value="파랑" />
+      <input type="button" id="button3" value="초록" />
+    </div>
+  </body>
+</html>
