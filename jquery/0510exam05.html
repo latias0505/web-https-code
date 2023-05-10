@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0510exam</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#signup").click(function () {
+          var idValue = $("#idbox").val();
+          var pwValue = $("#pwbox").val();
+          var genderValue = $("input[name='gender']:checked").val();
+          var jobValue = $("#job").val();
+          var checkboxesChecked = $("input[type='checkbox']:checked").length;
+          if (
+            idValue === null ||
+            idValue.trim() === "" ||
+            pwValue === null ||
+            pwValue.trim() === "" ||
+            genderValue === undefined ||
+            jobValue === "none" ||
+            checkboxesChecked < 3
+          ) {
+            alert("누락된 정보가 있습니다.");
+          } else {
+            alert("회원가입이 완료되었습니다.");
+          }
+        });
+        $("#cancel").click(function () {
+          $("#idbox").val("");
+          $("#pwbox").val("");
+          $("input[name='gender']").prop("checked", false);
+          $("#job").val("none");
+          $("input[type='checkbox']").prop("checked", false);
+        });
+      });
+    </script>
+    <style>
+      #idbox {
+        width: 200px;
+        height: 30px;
+        margin-left: 6px;
+      }
+      #pwbox {
+        width: 200px;
+        height: 30px;
+      }
+      #gender {
+        transform: scale(1.5);
+        margin-left: 10px;
+      }
+      #job {
+        width: 200px;
+        height: 40px;
+      }
+      #checkbox {
+        transform: scale(1.5);
+        margin-left: 10px;
+      }
+      #signup,
+      #cancel {
+        width: 130px;
+        height: 40px;
+      }
+      #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #gendertag {
+        margin-left: -78px;
+      }
+      #jobtag {
+        margin-left: -10px;
+      }
+      #hobbytag {
+        margin-left: 25px;
+      }
+      #container2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+        <label for="idbox">Id</label>
+        <input id="idbox" type="text" />
+      </div>
+      <br />
+      <div>
+        <label for="pwbox">pw</label>
+        <input id="pwbox" type="text" />
+      </div>
+      <br />
+      <div>
+        <label for="gender" id="gendertag">성별</label>
+        <input type="radio" id="gender" name="gender" />
+        <label for="gender">남자</label>
+        <input type="radio" id="gender" name="gender" />
+        <label for="gender">여자</label>
+      </div>
+      <br />
+      <div>
+        <label for="job" id="jobtag">직업</label>
+        <select name="job" id="job">
+          <option value="none"></option>
+          <option value="mafia">마피아</option>
+          <option value="police">경찰관</option>
+          <option value="detective">사립탐정</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        <label for="" id="hobbytag">취미</label>
+        <input type="checkbox" id="checkbox" />
+        <label for="checkbox">개발</label>
+        <input type="checkbox" id="checkbox" />
+        <label for="checkbox">게임</label>
+        <input type="checkbox" id="checkbox" />
+        <label for="checkbox">낚시</label><br />
+        <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <input type="checkbox" id="checkbox" />
+        <label for="checkbox">운동</label>
+        <input type="checkbox" id="checkbox" />
+        <label for="checkbox">독서</label>
+        <input type="checkbox" id="checkbox" />
+        <label for="checkbox">음악감상</label>
+      </div>
+    </div>
+    <br />
+    <div id="container2">
+      <input type="button" value="회원가입" id="signup" />
+      <input type="button" value="취소" id="cancel" />
+    </div>
+  </body>
+</html>
