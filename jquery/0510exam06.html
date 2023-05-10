@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0510exam06</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+     $(function() {
+  $("#checkboxmenu").change(function() {
+    var isChecked = $(this).prop("checked");
+    $('input[type="checkbox"]').prop("checked", isChecked);
+  });
+
+  $("#button").click(function() {
+    var checkedTitles = [];
+    $('input[type="checkbox"]:checked').each(function() {
+      var $parentTr = $(this).closest('tr');
+      var title = $parentTr.find('#title').text();
+      checkedTitles.push(title);
+    });
+
+    console.log(checkedTitles.join(', '));
+  });
+});
+    </script>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-top: 5px;
+        padding-bottom: 7px;
+        font-size: 20px;
+        text-align: center;
+      }
+      #chek {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      #title {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      #time {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      #checkboxmenu {
+        transform: scale(2);
+      }
+      #checkbox {
+        transform: scale(2);
+      }
+      #button {
+        width: 140px;
+        height: 40px;
+        background-color: rgba(128, 128, 128, 0.363);
+        margin-top: 20px;
+        margin-left: 686px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr">
+        <td id="chek"><input type="checkbox" id="checkboxmenu" />&nbsp;확인</td>
+        <td colspan="2" id="title">제목</td>
+        <td id="time">글쓴시간</td>
+      </tr>
+      <tr id="line1">
+        <td id="chek"><input type="checkbox" id="checkbox" /></td>
+        <td colspan="2" id="title">1번 제목</td>
+        <td id="time">11:11:00</td>
+      </tr>
+      <tr id="line2">
+        <td id="chek"><input type="checkbox" id="checkbox" /></td>
+        <td colspan="2" id="title">2번 제목, 2번 제목</td>
+        <td id="time">11:11:00</td>
+      </tr>
+      <tr id="line3">
+        <td id="chek"><input type="checkbox" id="checkbox" /></td>
+        <td colspan="2" id="title">3번 제목, 3번 제목, 3번 제목</td>
+        <td id="time">11:11:00</td>
+      </tr>
+      <tr id="line4">
+        <td id="chek"><input type="checkbox" id="checkbox" /></td>
+        <td colspan="2" id="title">4번 제목, 4번 제목, 4번 제목, 4번 제목</td>
+        <td id="time">11:11:00</td>
+      </tr>
+      <tr id="line5">
+        <td id="chek"><input type="checkbox" id="checkbox" /></td>
+        <td colspan="2" id="title">
+          5번 제목, 5번 제목, 5번 제목, 5번 제목, 5번 제목
+        </td>
+        <td id="time">11:11:00</td>
+      </tr>
+      <tr id="line6">
+        <td id="chek"><input type="checkbox" id="checkbox" /></td>
+        <td colspan="2" id="title">
+          6번 제목, 6번 제목, 6번 제목, 6번 제목, 6번 제목, 6번 제목
+        </td>
+        <td id="time">11:11:00</td>
+      </tr>
+    </table>
+    <input type="button" value="로그" id="button">
+  </body>
+</html>
