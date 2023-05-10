@@ -68,3 +68,4 @@ function changeBoxColor(boxId) {
   box.style.borderColor = "#000000";
   BoxName2 = box;
 }
+// 오류테스트

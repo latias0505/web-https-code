@@ -11,3 +11,4 @@ function sum(x, y) {
 function total(x, y) {
   return x + y;
 }
+// 오류테스트
