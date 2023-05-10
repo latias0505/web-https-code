@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // onload
+      $(function () {
+        // alert("Hello");
+
+        // let box = document.getElementById('box');
+
+        // 위에 있는 도큐먼트.get엘리먼트id와 같은 역활 (jquery를 사용하면 쓸 수 있는 기능)
+        $("#box")
+          .click(function () {
+            console.log("click!!");
+
+            // $(this).html("<h1>꾸겨넣기</h1>");
+            // $(this).text("<h1>꾸겨넣기</h1>");
+
+            //.append를 사용하면 셀렉터 뒤에 끼워넣을 수 있음
+            $(this).append("<h1>꾸겨넣기</h1>");
+
+            $(this).addClass("small-text");
+          })
+          .mouseover(function () {
+            console.log("mouseover");
+
+            // $(this) 를 사용하면 같은 객체를 다시 재 언급해줄 필요가 없이 사용 가능 (람다식에서는 사용 불가능)
+            $(this).css("background-color", "#ff0000");
+
+            //특정 조건에 원하는 엘리먼트 옵션을 변경하고 싶을 때 사용
+            $(this).attr("class", "border");
+          })
+          .mouseleave(function () {
+            console.log("mouseleave");
+            $(this).css("background-color", "#00ff00");
+            $(this).attr("class", " ");
+          });
+      });
+
+      //   // 화살표 표기법(람다식) 위에 onload랑 같음
+      //   $(() => {
+      //     alert("Hello");
+      //   });
+    </script>
+    <style>
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .border {
+        border: 2px black dotted;
+      }
+
+      .small-text {
+        font-size: small;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello</h1>
+
+    <div id="box"></div>
+  </body>
+</html>
