@@ -24,6 +24,14 @@
         width: 50px;
         height: 50px;
         border: 1px solid;
+        translate: scaleX(-1);
+      }
+      #babyfrog {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 0px;
+        bottom: 0px;
       }
     </style>
     <script>
@@ -37,6 +45,12 @@
 
         function gameStart() {
           setKeyboardEvent();
+          babyfrogStart();
+        }
+
+        function babyfrogStart() {
+          // 적이 오른쪽에서 왼쪽으로 이동
+          babyfrog.animate({ right: "300px" }, 2000);
         }
 
         //점프하기 (위로 올라갔다가 다시 아래로 내려와야함)
@@ -68,6 +82,7 @@
   <body>
     <div id="container">
       <img id="frog" src="frog.png" alt="" />
+      <img id="babyfrog" src="babyfrog.png" alt="" />
     </div>
   </body>
 </html>
