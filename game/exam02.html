@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #container {
+        position: absolute;
+        width: 300px;
+        height: 150px;
+        border: 1px black solid;
+      }
+      #frog {
+        position: absolute;
+        left: 20px;
+        bottom: 0px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid;
+      }
+    </style>
+    <script>
+      $(function () {
+        const frog = $("#frog");
+
+        // 점프중인지 아닌지?
+        let isJumping = false;
+
+        gameStart();
+
+        function gameStart() {
+          setKeyboardEvent();
+        }
+
+        //점프하기 (위로 올라갔다가 다시 아래로 내려와야함)
+        function jump() {
+          isJumping = true;
+          frog
+            .animate({ bottom: "+=50px" })
+            .animate({ bottom: "-=50px" }, function () {
+              isJumping = false;
+            });
+        }
+
+        function setKeyboardEvent() {
+          // 키보드 이벤트 정리
+          $("html").keydown(function (e) {
+            switch (e.key) {
+              case " ":
+                if (!isJumping) {
+                  jump();
+                }
+                break;
+            }
+            console.log(e.key);
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <img id="frog" src="frog.png" alt="" />
+    </div>
+  </body>
+</html>
