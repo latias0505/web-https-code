@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.game-text {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+  color: #fff;
+  font-size: 50px;
+}
+
+.game-text > button {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: salmon;
+  border: none;
+  cursor: pointer;
+}
+
+.guide {
+  text-align: center;
+  font-size: 30px;
+}
+
+.guide-1 {
+  text-align: center;
+  margin-left: -130px;
+}
+
+.score-text {
+  text-align: center;
+  font-size: 30px;
+}
+
+.score {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 2rem;
+}
+
+/* playground 안에 있는 ul에 스타일 값을 주겠다는 의미 */
+.playground > ul {
+  border: 1px solid #333;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.playground > ul > li {
+  width: 100%;
+  height: 25px;
+}
+
+.playground > ul > li > ul {
+  display: flex;
+}
+
+/* 테트리스에 들어갈 네모칸 한개 */
+.playground > ul > li > ul > li {
+  width: 25px;
+  height: 25px;
+  outline: 1px solid #ccc;
+}
+
+.tree {
+  background: #67c23a;
+}
+.bar {
+  background: salmon;
+}
+.square {
+  background: #2c82c9;
+}
+.zee {
+  background: #e6a23c;
+}
+.elLeft {
+  background: #8e44ad;
+}
+.elRight {
+  background: #16a085;
+}

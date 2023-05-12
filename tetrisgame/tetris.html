@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테트리스</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="game-text">
+        <span>게임 종료</span>
+        <button>다시 시작</button>
+      </div>
+      <!-- 점수표 -->
+      <div class="score-text">SCORE</div>
+      <div class="score">0</div>
+      <!-- 테트리스 게임이 이루어지는 div -->
+      <div class="playground">
+        <!-- 테트리스 게임이 이루어지는 전체 공간 ul -->
+        <ul></ul>
+      </div>
+    </div>
+    <br>
+    <div class="guide"><b>조작법<br></br></div>
+    <div class="guide-1">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조작 : ← ↓ → <br />블럭 빠르게 내리기 : 스페이스바<br />&nbsp;블럭 회전 : ↑
+    </div>
+    <script src="js/tetris.js" type="module"></script>
+  </body>
+</html>
