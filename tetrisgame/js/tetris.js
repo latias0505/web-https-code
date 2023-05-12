@@ -124,6 +124,18 @@ function checkMatch() {
 
 function generateNewBlock() {
   clearInterval(downInterval);
+  if (score >= 500) {
+    duration = 400;
+  }
+  if (score >= 1000) {
+    duration = 300;
+  }
+  if (score >= 1500) {
+    duration = 200;
+  }
+  if (score >= 2000) {
+    duration = 100;
+  }
   downInterval = setInterval(() => {
     moveBlock("top", 1);
   }, duration);
