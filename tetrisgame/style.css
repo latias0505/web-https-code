@@ -25,6 +25,7 @@ body {
   top: 0;
   color: #fff;
   font-size: 50px;
+  z-index: 10;
 }
 
 .game-text > button {
@@ -46,14 +47,76 @@ body {
 }
 
 .score-text {
-  text-align: center;
-  font-size: 30px;
+  font-size: 25px;
+  position: absolute;
+  z-index: -1;
+  transform: translate(-120px, 0%);
 }
 
 .score {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 2rem;
+  font-size: 25px;
+  position: absolute;
+  z-index: -1;
+  margin-right: -75px;
+  right: calc(100% + -18px);
+}
+
+.line {
+  font-size: 25px;
+  position: absolute;
+  z-index: -1;
+  margin-top: 60px;
+  transform: translate(-94px, 0%);
+}
+
+.lines {
+  font-size: 25px;
+  position: absolute;
+  z-index: -1;
+  margin-right: -50px;
+  right: calc(100% + -18px);
+}
+.level {
+  font-size: 25px;
+  position: absolute;
+  z-index: -1;
+  margin-top: 120px;
+  transform: translate(-109px, 0%);
+}
+.levels {
+  font-size: 25px;
+  position: absolute;
+  z-index: -1;
+  margin-right: -65px;
+  right: calc(100% + -18px);
+}
+
+.backcolor {
+  position: absolute;
+  z-index: -1;
+  width: 250px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+}
+
+.backborder {
+  position: absolute;
+  z-index: -2;
+  width: 275px;
+  height: 525px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: cornflowerblue;
+  border-radius: 20px;
+}
+
+.playground {
+  position: relative;
+  z-index: 1;
 }
 
 /* playground 안에 있는 ul에 스타일 값을 주겠다는 의미 */
@@ -61,6 +124,7 @@ body {
   border: 1px solid #333;
   width: 250px;
   margin: 0 auto;
+  margin-top: 10%;
 }
 
 .playground > ul > li {

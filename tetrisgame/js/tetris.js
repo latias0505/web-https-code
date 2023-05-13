@@ -4,6 +4,8 @@ import BLOCKS from "./blocks.js";
 const playground = document.querySelector(".playground > ul");
 const gameText = document.querySelector(".game-text");
 const scoreDisplay = document.querySelector(".score");
+const linesDisplay = document.querySelector(".lines");
+const levelDisplay = document.querySelector(".levels");
 const restartButton = document.querySelector(".game-text > button");
 
 //setting
@@ -13,6 +15,8 @@ const GAME_COLS = 10;
 // variables
 // 테트리스 기본 점수
 let score = 0;
+let lines = 0;
+let levels = "v.easy";
 
 // 블럭이 떨어지는 시간
 let duration = 500;
@@ -115,6 +119,8 @@ function checkMatch() {
       child.remove();
       prependNewLine();
       score += 100;
+      lines += 1;
+      linesDisplay.innerText = lines;
       scoreDisplay.innerText = score;
     }
   });
@@ -124,16 +130,18 @@ function checkMatch() {
 
 function generateNewBlock() {
   clearInterval(downInterval);
-  if (score >= 500) {
+  levelDisplay.innerText = levels;
+  if (score >= 2000) {
     duration = 400;
+    levels = "Easy";
   }
-  if (score >= 1000) {
+  if (score >= 4000) {
     duration = 300;
   }
-  if (score >= 1500) {
+  if (score >= 6000) {
     duration = 200;
   }
-  if (score >= 2000) {
+  if (score >= 8000) {
     duration = 100;
   }
   downInterval = setInterval(() => {
@@ -203,8 +211,10 @@ document.addEventListener("keydown", (e) => {
 
 restartButton.addEventListener("click", () => {
   playground.innerHTML = "";
-  score += 100;
+  score = 0;
+  lines = 0;
   scoreDisplay.innerText = score;
+  linesDisplay.innerText = lines;
   gameText.style.display = "none";
   init();
 });
