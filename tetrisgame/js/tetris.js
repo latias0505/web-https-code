@@ -124,7 +124,7 @@ function checkMatch() {
       if (levels === "V.Easy") {
         score += 50;
       } else if (levels === "Easy") {
-        score += 1000;
+        score += 100;
       } else if (levels === "Nomal") {
         score += 150;
       } else if (levels === "Hard") {

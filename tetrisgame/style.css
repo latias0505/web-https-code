@@ -45,6 +45,20 @@ body {
   cursor: pointer;
 }
 
+.container3 {
+  border: 3px white solid;
+  width: 260px;
+  position: absolute;
+  height: 200px;
+  border-radius: 5px;
+  align-items: center;
+  margin-top: 320px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.365);
+}
+
 .guide {
   text-align: center;
   font-size: 30px;
@@ -55,6 +69,12 @@ body {
   text-align: center;
   margin-left: -130px;
   color: white;
+  margin-top: -20px;
+  margin-left: 4px;
+}
+
+.play {
+  margin-left: -15px;
 }
 
 .score-text {
