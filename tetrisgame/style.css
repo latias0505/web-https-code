@@ -60,12 +60,6 @@ body {
   position: absolute;
   z-index: -1;
   transform: translate(-120px, 0%);
-  margin-top: -12px;
-  height: 200px;
-  top: 10px;
-  left: -3px;
-  border-radius: 20px;
-  background-color: white;
 }
 
 .score {
@@ -106,17 +100,6 @@ body {
   z-index: -1;
   margin-right: -65px;
   right: calc(100% + -18px);
-}
-.menucolor {
-  background-color: cornflowerblue;
-  border: 1px black;
-  position: absolute;
-  z-index: -2;
-  width: 157px;
-  height: 222px;
-  top: -0%;
-  left: -45%;
-  border-radius: 20px;
 }
 
 .backcolor {
@@ -168,29 +151,29 @@ body {
 .playground > ul > li > ul > li {
   width: 25px;
   height: 25px;
-  outline: 1px solid #ccc;
+  outline: 1px solid #cccccc6c;
 }
 
 .Tmino {
-  background: purple;
+  background: #f6accc;
 }
 .Imino {
-  background: skyblue;
+  background: #cf9494;
 }
 .Omino {
-  background: yellow;
+  background: #fdf374;
 }
 .Zmino {
-  background: red;
+  background: #bbd776;
 }
 .Smino {
-  background-color: yellowgreen;
+  background-color: #9d97c6;
 }
 .Lmino {
-  background: orange;
+  background: #90d6f6;
 }
 .Jmino {
-  background: blue;
+  background: #fbbc71;
 }
 
 .start-screen {

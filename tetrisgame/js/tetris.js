@@ -10,6 +10,7 @@ const restartButton = document.querySelector(".game-text > button");
 const startButton = document.querySelector(".start-button");
 
 let gameStarted = false;
+let audio;
 
 //setting
 const GAME_ROWS = 20;
@@ -19,7 +20,7 @@ const GAME_COLS = 10;
 // 테트리스 기본 점수
 let score = 0;
 let lines = 0;
-let levels = "v.easy";
+let levels = "V.Easy";
 
 // 블럭이 떨어지는 시간
 let duration = 500;
@@ -121,7 +122,17 @@ function checkMatch() {
     if (matched) {
       child.remove();
       prependNewLine();
-      score += 100;
+      if (levels === "V.Easy") {
+        score += 50;
+      } else if (levels === "Easy") {
+        score += 100;
+      } else if (levels === "Nomal") {
+        score += 150;
+      } else if (levels === "Hard") {
+        score += 200;
+      } else if (levels === "V.Hard") {
+        score += 250;
+      }
       lines += 1;
       linesDisplay.innerText = lines;
       scoreDisplay.innerText = score;
@@ -134,19 +145,19 @@ function checkMatch() {
 function generateNewBlock() {
   clearInterval(downInterval);
   levelDisplay.innerText = levels;
-  if (score > 2000) {
+  if (score > 500) {
     duration = 400;
     levels = "Easy";
   }
-  if (score > 4000) {
+  if (score > 1500) {
     duration = 300;
     levels = "Nomal";
   }
-  if (score > 6000) {
+  if (score > 3500) {
     duration = 200;
     levels = "Hard";
   }
-  if (score > 8000) {
+  if (score > 6500) {
     duration = 100;
     levels = "V.Hard";
   }
@@ -199,6 +210,7 @@ function dropBlock() {
 }
 function showGameoverText() {
   gameText.style.display = "flex";
+  stopAudio();
 }
 
 // event handling
@@ -232,6 +244,8 @@ restartButton.addEventListener("click", () => {
   lines = 0;
   scoreDisplay.innerText = score;
   linesDisplay.innerText = lines;
+  levels = "V.Easy";
+  duration = 500;
   gameText.style.display = "none";
   init();
   startGame();
@@ -249,4 +263,21 @@ function startGame() {
   gameStarted = true;
 
   generateNewBlock();
+
+  audio = document.querySelector("audio");
+  audio.loop = true;
+  audio.play();
+}
+
+document.querySelector(".start-button").addEventListener("click", function () {
+  var audio = document.querySelector("audio");
+  audio.loop = true; // 노래를 반복 재생
+  audio.play(); // 노래 재생
+});
+
+function stopAudio() {
+  if (audio) {
+    audio.pause();
+    audio.currentTime = 0;
+  }
 }
