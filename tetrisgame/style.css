@@ -13,7 +13,9 @@ body {
 }
 
 .game-text {
+  display: flex;
   display: none;
+  align-items: center;
   justify-content: center;
   position: absolute;
   width: 250px;
@@ -26,6 +28,10 @@ body {
   z-index: 10;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.game-text span {
+  margin-bottom: 100px;
 }
 
 .game-text > button {
@@ -166,4 +172,41 @@ body {
 }
 .Jmino {
   background: blue;
+}
+
+.start-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 250px;
+  height: 500px;
+  background: rgba(0, 0, 0, 0.7);
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
+
+.start-text {
+  text-align: center;
+  color: #fff;
+}
+
+.start-text h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.start-text p {
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+
+.start-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background: salmon;
+  border: none;
+  cursor: pointer;
 }

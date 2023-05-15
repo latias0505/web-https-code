@@ -7,6 +7,9 @@ const scoreDisplay = document.querySelector(".score");
 const linesDisplay = document.querySelector(".lines");
 const levelDisplay = document.querySelector(".levels");
 const restartButton = document.querySelector(".game-text > button");
+const startButton = document.querySelector(".start-button");
+
+let gameStarted = false;
 
 //setting
 const GAME_ROWS = 20;
@@ -48,7 +51,7 @@ function init() {
   for (let i = 0; i < GAME_ROWS; i++) {
     prependNewLine();
   }
-  generateNewBlock();
+  //generateNewBlock();
 }
 
 function prependNewLine() {
@@ -151,6 +154,13 @@ function generateNewBlock() {
     moveBlock("top", 1);
   }, duration);
 
+  const startButton = document.querySelector(".start-button");
+  startButton.addEventListener("click", () => {
+    downInterval = setInterval(() => {
+      moveBlock("top", 1);
+    }, duration);
+  });
+
   levelDisplay.innerText = levels;
 
   const blockArray = Object.entries(BLOCKS);
@@ -193,6 +203,8 @@ function showGameoverText() {
 
 // event handling
 document.addEventListener("keydown", (e) => {
+  if (!gameStarted) return;
+
   switch (e.key) {
     case "ArrowRight":
       moveBlock("left", 1);
@@ -222,4 +234,19 @@ restartButton.addEventListener("click", () => {
   linesDisplay.innerText = lines;
   gameText.style.display = "none";
   init();
+  startGame();
 });
+
+startButton.addEventListener("click", startGame);
+
+function startGame() {
+  const startScreen = document.querySelector(".start-screen");
+  const gameText = document.querySelector(".game-text");
+
+  startScreen.style.display = "none";
+  gameText.style.display = "none";
+
+  gameStarted = true;
+
+  generateNewBlock();
+}
