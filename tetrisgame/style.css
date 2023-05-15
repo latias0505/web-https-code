@@ -49,7 +49,7 @@ body {
   border: 3px white solid;
   width: 260px;
   position: absolute;
-  height: 200px;
+  height: 170px;
   border-radius: 5px;
   align-items: center;
   margin-top: 320px;
@@ -279,4 +279,39 @@ body {
   z-index: -10;
   position: absolute;
   top: 0px;
+}
+
+.maker {
+  color: white;
+  font-size: 30px;
+  border-radius: 5px;
+  width: 161px;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.407);
+  z-index: -1;
+  margin-bottom: -100px;
+}
+
+.git {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 45px;
+  left: 15px;
+}
+
+.youtube {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 45px;
+  left: 65px;
+}
+
+.pushoong {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 45px;
+  left: 115px;
 }
