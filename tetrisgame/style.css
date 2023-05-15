@@ -60,6 +60,12 @@ body {
   position: absolute;
   z-index: -1;
   transform: translate(-120px, 0%);
+  margin-top: -12px;
+  height: 200px;
+  top: 10px;
+  left: -3px;
+  border-radius: 20px;
+  background-color: white;
 }
 
 .score {
@@ -75,6 +81,7 @@ body {
   position: absolute;
   z-index: -1;
   margin-top: 60px;
+  left: -3px;
   transform: translate(-94px, 0%);
 }
 
@@ -91,6 +98,7 @@ body {
   z-index: -1;
   margin-top: 120px;
   transform: translate(-109px, 0%);
+  left: -3px;
 }
 .levels {
   font-size: 25px;
@@ -98,6 +106,17 @@ body {
   z-index: -1;
   margin-right: -65px;
   right: calc(100% + -18px);
+}
+.menucolor {
+  background-color: cornflowerblue;
+  border: 1px black;
+  position: absolute;
+  z-index: -2;
+  width: 157px;
+  height: 222px;
+  top: -0%;
+  left: -45%;
+  border-radius: 20px;
 }
 
 .backcolor {
