@@ -4,13 +4,13 @@ import BLOCKS from "./blocks.js";
 const playground = document.querySelector(".playground > ul");
 const gameText = document.querySelector(".game-text");
 const scoreDisplay = document.querySelector(".score");
-const linesDisplay = document.querySelector(".lines");
 const levelDisplay = document.querySelector(".levels");
 const restartButton = document.querySelector(".game-text > button");
 const startButton = document.querySelector(".start-button");
 
 let gameStarted = false;
 let audio;
+let highscore = 0;
 
 //setting
 const GAME_ROWS = 20;
@@ -19,7 +19,6 @@ const GAME_COLS = 10;
 // variables
 // 테트리스 기본 점수
 let score = 0;
-let lines = 0;
 let levels = "V.Easy";
 
 // 블럭이 떨어지는 시간
@@ -125,7 +124,7 @@ function checkMatch() {
       if (levels === "V.Easy") {
         score += 50;
       } else if (levels === "Easy") {
-        score += 100;
+        score += 1000;
       } else if (levels === "Nomal") {
         score += 150;
       } else if (levels === "Hard") {
@@ -133,8 +132,7 @@ function checkMatch() {
       } else if (levels === "V.Hard") {
         score += 250;
       }
-      lines += 1;
-      linesDisplay.innerText = lines;
+
       scoreDisplay.innerText = score;
     }
   });
@@ -211,6 +209,11 @@ function dropBlock() {
 function showGameoverText() {
   gameText.style.display = "flex";
   stopAudio();
+
+  if (score > highscore) {
+    highscore = score;
+    document.querySelector(".highscores").textContent = highscore;
+  }
 }
 
 // event handling
@@ -241,12 +244,14 @@ document.addEventListener("keydown", (e) => {
 restartButton.addEventListener("click", () => {
   playground.innerHTML = "";
   score = 0;
-  lines = 0;
   scoreDisplay.innerText = score;
-  linesDisplay.innerText = lines;
   levels = "V.Easy";
   duration = 500;
   gameText.style.display = "none";
+  if (score > highscore) {
+    highscore = score;
+    document.querySelector(".highscores").textContent = highscore;
+  }
   init();
   startGame();
 });

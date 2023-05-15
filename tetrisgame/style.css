@@ -48,58 +48,98 @@ body {
 .guide {
   text-align: center;
   font-size: 30px;
+  color: gold;
 }
 
 .guide-1 {
   text-align: center;
   margin-left: -130px;
+  color: white;
 }
 
 .score-text {
   font-size: 25px;
   position: absolute;
-  z-index: -1;
-  transform: translate(-120px, 0%);
+  top: -25%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: gold;
 }
 
 .score {
-  font-size: 25px;
+  font-size: 30px;
   position: absolute;
-  z-index: -1;
-  margin-right: -75px;
-  right: calc(100% + -18px);
+  top: -13%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
 }
 
-.line {
-  font-size: 25px;
+.container2 {
+  border: 3px white solid;
   position: absolute;
   z-index: -1;
-  margin-top: 60px;
-  left: -3px;
+  transform: translate(-109px, 0%);
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  left: 390px;
+}
+
+.highscore {
+  font-size: 20px;
+  position: absolute;
+  z-index: -1;
+  left: 91px;
+  width: 100%;
   transform: translate(-94px, 0%);
+  border: 3px white solid;
+  border-radius: 5px;
+  width: 100px;
+  background-color: white;
+  text-align: center;
+  height: 57px;
 }
 
-.lines {
+.highscores {
   font-size: 25px;
   position: absolute;
+  top: 60px;
+  left: 52px;
+  transform: translateX(-50%);
+  color: white;
+}
+.container1 {
+  border: 3px white solid;
+  position: absolute;
   z-index: -1;
-  margin-right: -50px;
-  right: calc(100% + -18px);
+  transform: translate(-109px, 0%);
+  width: 85px;
+  height: 90px;
+  border-radius: 5px;
+  left: -10px;
 }
 .level {
-  font-size: 25px;
+  font-size: 20px;
   position: absolute;
   z-index: -1;
-  margin-top: 120px;
+  left: 107px;
   transform: translate(-109px, 0%);
-  left: -3px;
+  border: 3px white solid;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
+  width: 85px;
 }
 .levels {
   font-size: 25px;
   position: absolute;
   z-index: -1;
-  margin-right: -65px;
+  margin-right: -48px;
   right: calc(100% + -18px);
+  color: white;
+  top: 39px;
+  left: 6px;
 }
 
 .backcolor {
@@ -211,4 +251,12 @@ body {
   background: salmon;
   border: none;
   cursor: pointer;
+}
+
+.backimg {
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  position: absolute;
+  top: 0px;
 }
