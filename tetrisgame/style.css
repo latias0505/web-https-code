@@ -143,21 +143,24 @@ body {
   outline: 1px solid #ccc;
 }
 
-.tree {
-  background: #67c23a;
+.Tmino {
+  background: purple;
 }
-.bar {
-  background: salmon;
+.Imino {
+  background: skyblue;
 }
-.square {
-  background: #2c82c9;
+.Omino {
+  background: yellow;
 }
-.zee {
-  background: #e6a23c;
+.Zmino {
+  background: red;
 }
-.elLeft {
-  background: #8e44ad;
+.Smino {
+  background-color: yellowgreen;
 }
-.elRight {
-  background: #16a085;
+.Lmino {
+  background: orange;
+}
+.Jmino {
+  background: blue;
 }

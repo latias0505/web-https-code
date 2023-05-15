@@ -131,22 +131,27 @@ function checkMatch() {
 function generateNewBlock() {
   clearInterval(downInterval);
   levelDisplay.innerText = levels;
-  if (score >= 2000) {
+  if (score > 2000) {
     duration = 400;
     levels = "Easy";
   }
-  if (score >= 4000) {
+  if (score > 4000) {
     duration = 300;
+    levels = "Nomal";
   }
-  if (score >= 6000) {
+  if (score > 6000) {
     duration = 200;
+    levels = "Hard";
   }
-  if (score >= 8000) {
+  if (score > 8000) {
     duration = 100;
+    levels = "V.Hard";
   }
   downInterval = setInterval(() => {
     moveBlock("top", 1);
   }, duration);
+
+  levelDisplay.innerText = levels;
 
   const blockArray = Object.entries(BLOCKS);
   const randomIndex = Math.floor(Math.random() * blockArray.length);
