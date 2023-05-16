@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie List</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .movie-card {
+        display: flex;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+
+      .movie-poster {
+        width: 150px;
+        height: auto;
+        margin-right: 20px;
+      }
+
+      .movie-details {
+        flex-grow: 1;
+      }
+    </style>
+    <script>
+      $(document).ready(async function () {
+        const apiKey = "a64533e7ece6c72731da47c9c8bc691f";
+        const apiUrl = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=ko-KR&page=1`;
+
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        const movies = data.results;
+
+        for (const movie of movies) {
+          const movieCard = $('<div class="movie-card">');
+
+          if (movie.poster_path) {
+            const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+            const moviePoster = $('<img class="movie-poster">').attr(
+              "src",
+              posterUrl
+            );
+            movieCard.append(moviePoster);
+          }
+
+          const movieDetails = $('<div class="movie-details">');
+          const movieTitle = $("<h3>").text(movie.title);
+          const movieOverview = $("<p>").text(movie.overview);
+
+          movieDetails.append(movieTitle, movieOverview);
+          movieCard.append(movieDetails);
+
+          const movieId = movie.id;
+          movieCard.click(function () {
+            window.open(`exam05-2.html?id=${movieId}`, "_blank");
+          });
+
+          $("body").append(movieCard);
+        }
+      });
+    </script>
+  </head>
+
+  <body></body>
+</html>
