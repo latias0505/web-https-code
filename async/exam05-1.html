@@ -5,28 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 30px;
+        justify-items: center;
+        align-content: center; /* 세로 방향 가운데 정렬 */
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .movie-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffffff;
+        border-radius: 4px;
+        padding: 30px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease-in-out;
+        cursor: pointer;
+        width: 180px;
+        height: 300px;
+      }
+
+      .movie-card:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.445);
+      }
+
+      .movie-poster {
+        width: 110%;
+        height: auto;
+        margin-bottom: 10px;
+        margin-top: -30px;
+      }
+
+      .movie-title {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .movie-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: auto;
+        font-size: 10px;
+      }
+
+      .movie-details h3 {
+        font-weight: bold;
+        color: black;
+        text-decoration: underline;
+      }
+
+      .title-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        background-color: #9488e6;
+        color: #ffffff;
+        margin-bottom: 20px;
+        margin-top: -20px;
+        margin-left: -20px;
+        margin-right: -20px;
+        position: sticky;
+        top: 0;
+      }
+
+      .title-bar h1 {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    </style>
     <script
       src="https://code.jquery.com/jquery-3.6.4.js"
       integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
       crossorigin="anonymous"
     ></script>
-    <style>
-      .movie-card {
-        display: flex;
-        margin-bottom: 20px;
-        cursor: pointer;
-      }
-
-      .movie-poster {
-        width: 150px;
-        height: auto;
-        margin-right: 20px;
-      }
-
-      .movie-details {
-        flex-grow: 1;
-      }
-    </style>
     <script>
       $(document).ready(async function () {
         const apiKey = "a64533e7ece6c72731da47c9c8bc691f";
@@ -36,6 +102,8 @@
         const data = await response.json();
 
         const movies = data.results;
+
+        const container = $(".container");
 
         for (const movie of movies) {
           const movieCard = $('<div class="movie-card">');
@@ -51,9 +119,8 @@
 
           const movieDetails = $('<div class="movie-details">');
           const movieTitle = $("<h3>").text(movie.title);
-          const movieOverview = $("<p>").text(movie.overview);
 
-          movieDetails.append(movieTitle, movieOverview);
+          movieDetails.append(movieTitle);
           movieCard.append(movieDetails);
 
           const movieId = movie.id;
@@ -61,11 +128,17 @@
             window.open(`exam05-2.html?id=${movieId}`, "_blank");
           });
 
-          $("body").append(movieCard);
+          container.append(movieCard);
         }
       });
     </script>
   </head>
 
-  <body></body>
+  <body>
+    <div class="title-bar">
+      <h1>Movie List</h1>
+    </div>
+
+    <div class="container"></div>
+  </body>
 </html>
