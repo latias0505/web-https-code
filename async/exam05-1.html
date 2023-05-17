@@ -133,7 +133,9 @@
           }
 
           const movieDetails = $('<div class="movie-details">');
-          const movieTitle = $("<h3>").text(movie.title);
+          const movieTitle = $("<h3>")
+            .addClass("movie-title")
+            .text(movie.title);
 
           movieDetails.append(movieTitle);
           movieCard.append(movieDetails);
@@ -145,6 +147,22 @@
 
           container.append(movieCard);
         }
+
+        $(".search").on("input", function () {
+          const searchKeyword = $(this).val().toLowerCase();
+
+          $(".movie-card").each(function () {
+            const movieTitle = $(this)
+              .find(".movie-title")
+              .text()
+              .toLowerCase();
+            if (movieTitle.includes(searchKeyword)) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          });
+        });
       });
     </script>
   </head>
