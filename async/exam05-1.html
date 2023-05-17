@@ -93,25 +93,14 @@
         margin-right: -300px;
       }
 
-      .search-bar {
-        display: flex;
-        align-items: center;
-      }
-
-      .search-bar input[type="text"] {
-        margin-left: auto; /* 검색창을 오른쪽에 위치시키기 위해 */
+      .search {
         margin-right: 10px;
+        height: 20px;
       }
 
-      .search-bar input[type="text"],
-      .search-bar button {
-        height: 30px;
-        margin-right: 5px;
-      }
-      .search-bar button {
-        width: 60px; /* 버튼의 가로 길이를 조정합니다 */
-        border-radius: 10px;
-        border: none;
+      .searchicon {
+        width: 30px;
+        margin-right: -60px;
       }
     </style>
     <script
@@ -163,53 +152,10 @@
   <body>
     <div class="title-bar">
       <h1>Movie List</h1>
-      <div class="search-bar">
-        <input type="text" id="search-input" placeholder="영화를 검색하세요" />
-        <button id="search-button">검색</button>
-      </div>
+      <img src="1.png" alt="" class="searchicon" />
+      <input type="text" class="search" />
     </div>
 
     <div class="container"></div>
-
-    <script>
-      // 기존의 JavaScript 코드를 이어서 작성합니다.
-
-      // 검색 버튼 클릭 이벤트 처리
-      $("#search-button").click(function () {
-        const searchInput = $("#search-input").val();
-        if (searchInput.trim() !== "") {
-          // 검색어가 비어 있지 않은 경우 검색 수행
-          const encodedSearchInput = encodeURIComponent(searchInput);
-          const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=ko-KR&query=${encodedSearchInput}&page=1`;
-
-          performSearch(searchUrl);
-        }
-      });
-
-      // 엔터 키를 눌렀을 때 검색 수행
-      $("#search-input").keypress(function (event) {
-        if (event.which === 13) {
-          $("#search-button").click();
-        }
-      });
-
-      // 검색 수행 함수
-      async function performSearch(searchUrl) {
-        const response = await fetch(searchUrl);
-        const data = await response.json();
-
-        const movies = data.results;
-
-        // 기존의 영화 목록을 삭제
-        $(".container").empty();
-
-        for (const movie of movies) {
-          // 기존의 영화 카드 생성 코드와 동일
-          // ...
-
-          $(".container").append(movieCard);
-        }
-      }
-    </script>
   </body>
 </html>
