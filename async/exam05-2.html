@@ -18,6 +18,16 @@
         width: 300px;
         height: auto;
         margin-bottom: 10px;
+        float: left;
+        margin-right: 20px;
+      }
+
+      .movie-details .movie-info {
+        overflow: hidden;
+      }
+
+      .movie-details p {
+        margin: 0;
       }
     </style>
     <script
@@ -36,23 +46,24 @@
         const movieData = await response.json();
 
         const movieDetails = $('<div class="movie-details">');
-        const movieTitle = $("<h1>").text(movieData.title);
         const moviePoster = $("<img>").attr(
           "src",
           `https://image.tmdb.org/t/p/w500${movieData.poster_path}`
         );
-        const movieOverview = $("<p>").text(movieData.overview);
+        const movieInfo = $('<div class="movie-info">');
+        const movieTitle = $("<h1>").text(movieData.title);
+        const movieRating = $("<p>").text(`평점: ${movieData.vote_average}`);
         const movieReleaseDate = $("<p>").text(
           `개봉일: ${movieData.release_date}`
         );
-        const movieRating = $("<p>").text(`평점: ${movieData.vote_average}`);
+        const movieOverview = $("<p>").text(movieData.overview);
 
+        movieInfo.append(movieTitle, movieRating);
         movieDetails.append(
-          movieTitle,
           moviePoster,
-          movieOverview,
+          movieInfo,
           movieReleaseDate,
-          movieRating
+          movieOverview
         );
         $("body").append(movieDetails);
       });
